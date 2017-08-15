@@ -24,7 +24,7 @@ def pob_sub():
         if not data:
             logging.warning("No data supplied")
             return "", 400
-        if not (attributes.get("dataset") or attributes.get("table")):
+        if not attributes.get("dataset") or not attributes.get("table"):
             logging.warning("No dataset or table supplied")
             return "", 400
 
