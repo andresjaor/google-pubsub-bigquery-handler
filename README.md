@@ -4,7 +4,7 @@ Ready to deploy Google App Engine microservice using gcloud SDK. The service han
 # Supports
   - One or multiple rows per message
   - Bigquery insertion in background thread
-  - Multiple dataset - table target per message
+  - Dataset/table target specified per message
 
 # Pre-requisites
   - python 2.7/pip installed
