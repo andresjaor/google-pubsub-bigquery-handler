@@ -21,15 +21,17 @@ Create lib folder
 ```sh
 $ pip install -t lib -r requirements.txt
 ```
+
+# Setup
+  - Create your BigQuery dataset - table schema
+  - Create a PubSub topic
+  - Create a PubSub subscriber for the topic and in "delivery type" option chose "push into an endpoint url". Put there the GAE url endpoint e.g.(**https://{{project}}.appspot.com/pub-sub**)
+  - Generate a JSON service account key in APIs & services/credentials, copy and paste it into **credentials.json** file.
+  
 # deploy
 ```sh
 $ gcloud app deploy
 ```
-# Setup
-  - Create your BigQuery dataset - table schema
-  - Create a PubSub topic
-  - Create a PubSub subscriber for the topic and in "delivery type" chose "push into an endpoint url" put there the GAE url endpoint e.g.(**https://{{project}}.appspot.com/pub-sub**)
-  - Generate a JSON service account key, copy and paste it into **credentials.json** file.
 
 # Usage
 PubSub messages has data and attributes fields. In data field put your json string data representation, in attributes define dataset and table. Publish your message using [google pubsub api](https://cloud.google.com/pubsub/docs/reference/libraries#client-libraries-install-python). Every message published will be handle by PubSub GAE microservice and data will be inserted.
